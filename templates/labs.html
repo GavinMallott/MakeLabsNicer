@@ -1,0 +1,169 @@
+<!-- 
+Bootstrap Freelancer Template, Public Domain
+
+Template edited by Gavin Mallott
+October 3, 2017
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ lab_number }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/">Home</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#Preparation">Preparation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#LabWork">Lab Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#TurnIn">Turn In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <img class="img-fluid" src="img/profile.png" alt="">
+        <div class="intro-text">
+          <span class="name">{{ lab_number }}</span>
+          <hr class="star-light">
+          <span class="skills">{{ start.text }}</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Preparation Grid Section -->
+    <section id="Preparation">
+      <div class="container">
+        <h2 class="text-center">Preparation</h2>
+        <hr class="star-primary">
+        <div class="row">
+          
+          {% for item in prep %}
+          <div class="col-lg-12 ml-auto">
+              <p>{{ item.text }}</p>
+          </div>
+          {% endfor %}
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LabWork Section -->
+    <section class="success" id="LabWork">
+      <div class="container">
+        <h2 class="text-center">Lab Work</h2>
+        <hr class="star-light">
+        <div class="row">
+
+          {% for item in lab %}
+            {% if item.name == 'pre' %}
+              <div class="col-lg-12 ml-auto">
+                <br />
+                <pre class="code"><code>{{ item.text }}</code></pre>
+                <br />
+              </div>
+            {% else %}
+              <div class="col-lg-12 ml-auto">
+                <p>{{ item.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+     <!-- TurnIn Section -->
+     <section class="success2" id="TurnIn">
+      <div class="container">
+        <h2 class="text-center">Turn In</h2>
+        <hr class="star-primary">
+        <div class="row">
+
+          {% for item in turnin_text%}
+          <div class="col-lg-12 ml-auto">
+            <p>{{ item.text }}</p>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="footer-below">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              {{ end.text }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top d-lg-none">
+      <a class="btn btn-primary js-scroll-trigger" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/popper/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='js/freelancer.min.js') }}"></script>
+
+  </body>
+
+</html>
