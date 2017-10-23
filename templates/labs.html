@@ -62,22 +62,22 @@ October 3, 2017
         <img class="img-fluid" src="img/profile.png" alt="">
         <div class="intro-text">
           <span class="name">{{ lab_number }}</span>
-          <hr class="star-light">
+          <hr class="star-primary">
           <span class="skills">{{ start.text }}</span>
         </div>
       </div>
     </header>
 
     <!-- Preparation Grid Section -->
-    <section id="Preparation">
+    <section class='success' id="Preparation">
       <div class="container">
         <h2 class="text-center">Preparation</h2>
-        <hr class="star-primary">
+        <hr class="star-light">
         <div class="row">
           
           {% for item in prep %}
           <div class="col-lg-12 ml-auto">
-              <p>{{ item.text }}</p>
+              {{item | safe }}
           </div>
           {% endfor %}
 
@@ -87,10 +87,10 @@ October 3, 2017
     </section>
 
     <!-- LabWork Section -->
-    <section class="success" id="LabWork">
+    <section id="LabWork">
       <div class="container">
         <h2 class="text-center">Lab Work</h2>
-        <hr class="star-light">
+        <hr class="star-primary">
         <div class="row">
 
           {% for item in lab %}
@@ -100,10 +100,11 @@ October 3, 2017
                 <pre class="code"><code>{{ item.text }}</code></pre>
                 <br />
               </div>
-            {% else %}
-              <div class="col-lg-12 ml-auto">
-                <p>{{ item.text }}</p>
-              </div>
+            {% endif %}
+            {% if item.name == 'p' %}
+             <div class="col-lg-12 ml-auto">
+              {{ item | safe }}
+            </div>
             {% endif %}
           {% endfor %}
 
@@ -112,10 +113,10 @@ October 3, 2017
     </section>
 
      <!-- TurnIn Section -->
-     <section class="success2" id="TurnIn">
+     <section class="success" id="TurnIn">
       <div class="container">
         <h2 class="text-center">Turn In</h2>
-        <hr class="star-primary">
+        <hr class="star-light">
         <div class="row">
 
           {% for item in turnin_text%}

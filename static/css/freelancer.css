@@ -150,12 +150,12 @@ section.success2 {
       -moz-transition: all 0.3s;
       transition: all 0.3s; }
     #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-      color: white;
+      color: #18BC9C;
       border-radius: 3px;
-      background: #18BC9C; }
+      background: #FFF; }
       #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-        color: white;
-        background: #18BC9C; }
+        color: #18BC9C;
+        background: #FFF; }
   #mainNav.navbar-shrink {
     padding-top: 10px;
     padding-bottom: 10px; }
@@ -166,8 +166,8 @@ header.masthead {
   padding-top: 100px;
   padding-bottom: 50px;
   text-align: center;
-  color: white;
-  background: #18BC9C; }
+  color: #18BC9C;
+  background: #FFF; }
   header.masthead img {
     display: block;
     margin: 0 auto 20px; }

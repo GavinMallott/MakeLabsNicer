@@ -1,18 +1,16 @@
 """
 Author: Gavin Mallott
 Created: October 3, 2017
-Lasted Edited: October 10, 2017
+Lasted Edited: October 22, 2017
 """
 
 
 #################################
 ## TO DO:                      ##
 ##                             ##
-## Manage in-line <code> tags  ##
 ## Manage <ul> and <li> tags   ##
 ## Set up hyperlinks           ##
 ## Edit main page              ##
-## Make things bold            ##
 ##                             ##
 #################################
 
@@ -154,12 +152,11 @@ class AssignmentData(object):
     def get_links(self, tag_list):
         '''Separate <a> tags by passing in a list of enclosing <p> tags'''
         links = [link.a for link in tag_list if link.a != None]
-        hrefs = []
-        for link in links:
-            hrefs.append(link.get('href'))
+        hrefs = [link.get('href') for link in links]
+        text = [link.text for link in links]
 
-        print(links)
-        print(hrefs)
+        return links
+        #return hrefs, text
 
 
 if __name__ == '__main__':   
