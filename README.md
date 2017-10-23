@@ -7,5 +7,4 @@ A python framework that takes un-stylized HTML from Professor David G. Kay's ICS
 
 To Do:
  - Format homepage
- - Dislay in-line code, a, strong, ul, and li tags
- 
+ - Display list tags
