@@ -77,7 +77,7 @@ class AssignmentData(object):
 
     def lab_work(self):
         '''Get all <p> and <pre> tags in the Lab Work section'''
-        everything = self.soup.find_all(['p', 'pre'])
+        everything = self.soup.find_all(['p', 'pre', 'ul'])
 
         counter = 0
         lab_start = 0
